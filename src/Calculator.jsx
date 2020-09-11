@@ -40,18 +40,18 @@ function Calculator() {
                 <h3>*</h3>
             </div>
             <div id="equal" className="operator-equal">=</div>
-            <div id="numbers" className="digit7 digit-color" onClick={() => {setNumber(7)}}>7</div>
-            <div id="numbers" className="digit8 digit-color" onClick={() => {setNumber(8)}}>8</div>
-            <div id="numbers" className="digit9 digit-color" onClick={() => {setNumber(9)}}>9</div>
-            <div id="numbers" className="digit4 digit-color" onClick={() => {setNumber(4)}}>4</div>
-            <div id="numbers" className="digit5 digit-color" onClick={() => {setNumber(5)}}>5</div>
-            <div id="numbers" className="digit6 digit-color" onClick={() => {setNumber(6)}}>6</div>
-            <div id="numbers" className="digit1 digit-color" onClick={() => {setNumber(1)}}>1</div>
-            <div id="numbers" className="digit2 digit-color" onClick={() => {setNumber(2)}}>2</div>
-            <div id="numbers" className="digit3 digit-color" onClick={() => {setNumber(3)}}>3</div>
-            <div id="numbers" className="digit0 digit-color" onClick={() => {setNumber(0)}}>0</div>
-            <div id="numbers" className="digitDot digit-color">.</div>
-            <div id="numbers" className="digitAC digit-color" onClick={() => {setNumber("AC")}}>AC</div>
+            <div id="numbers" className="digit7 digits" onClick={() => {setNumber(7)}}>7</div>
+            <div id="numbers" className="digit8 digits" onClick={() => {setNumber(8)}}>8</div>
+            <div id="numbers" className="digit9 digits" onClick={() => {setNumber(9)}}>9</div>
+            <div id="numbers" className="digit4 digits" onClick={() => {setNumber(4)}}>4</div>
+            <div id="numbers" className="digit5 digits" onClick={() => {setNumber(5)}}>5</div>
+            <div id="numbers" className="digit6 digits" onClick={() => {setNumber(6)}}>6</div>
+            <div id="numbers" className="digit1 digits" onClick={() => {setNumber(1)}}>1</div>
+            <div id="numbers" className="digit2 digits" onClick={() => {setNumber(2)}}>2</div>
+            <div id="numbers" className="digit3 digits" onClick={() => {setNumber(3)}}>3</div>
+            <div id="numbers" className="digit0 digits" onClick={() => {setNumber(0)}}>0</div>
+            <div id="numbers" className="digitDot digits">.</div>
+            <div id="numbers" className="digitAC digits" onClick={() => {setNumber("AC")}}>AC</div>
         </div>
     );
 }
