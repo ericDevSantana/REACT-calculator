@@ -40,18 +40,18 @@ function Calculator() {
                 <h3>*</h3>
             </div>
             <div id="equal" className="operator-equal">=</div>
-            <div id="numbers" className="digit7" onClick={() => {setNumber(7)}}>7</div>
-            <div id="numbers" className="digit8" onClick={() => {setNumber(8)}}>8</div>
-            <div id="numbers" className="digit9" onClick={() => {setNumber(9)}}>9</div>
-            <div id="numbers" className="digit4" onClick={() => {setNumber(4)}}>4</div>
-            <div id="numbers" className="digit5" onClick={() => {setNumber(5)}}>5</div>
-            <div id="numbers" className="digit6" onClick={() => {setNumber(6)}}>6</div>
-            <div id="numbers" className="digit1" onClick={() => {setNumber(1)}}>1</div>
-            <div id="numbers" className="digit2" onClick={() => {setNumber(2)}}>2</div>
-            <div id="numbers" className="digit3" onClick={() => {setNumber(3)}}>3</div>
-            <div id="numbers" className="digit0" onClick={() => {setNumber(0)}}>0</div>
-            <div id="numbers" className="digitDot">.</div>
-            <div id="numbers" className="digitAC" onClick={() => {setNumber("AC")}}>AC</div>
+            <div id="numbers" className="digit7 digit-color" onClick={() => {setNumber(7)}}>7</div>
+            <div id="numbers" className="digit8 digit-color" onClick={() => {setNumber(8)}}>8</div>
+            <div id="numbers" className="digit9 digit-color" onClick={() => {setNumber(9)}}>9</div>
+            <div id="numbers" className="digit4 digit-color" onClick={() => {setNumber(4)}}>4</div>
+            <div id="numbers" className="digit5 digit-color" onClick={() => {setNumber(5)}}>5</div>
+            <div id="numbers" className="digit6 digit-color" onClick={() => {setNumber(6)}}>6</div>
+            <div id="numbers" className="digit1 digit-color" onClick={() => {setNumber(1)}}>1</div>
+            <div id="numbers" className="digit2 digit-color" onClick={() => {setNumber(2)}}>2</div>
+            <div id="numbers" className="digit3 digit-color" onClick={() => {setNumber(3)}}>3</div>
+            <div id="numbers" className="digit0 digit-color" onClick={() => {setNumber(0)}}>0</div>
+            <div id="numbers" className="digitDot digit-color">.</div>
+            <div id="numbers" className="digitAC digit-color" onClick={() => {setNumber("AC")}}>AC</div>
         </div>
     );
 }
