@@ -40,6 +40,10 @@ body {
   text-align: right;
 }
 
+.screen h3 {
+  margin: 0 10px 0 0;
+}
+
 .operator1 {
   grid-area: 2 / 4 / 2 / 5;
   background-color: orange;
