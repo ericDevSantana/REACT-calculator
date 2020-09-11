@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Screen from "./Screen";
+import Calculator from "./Calculator";
 
 ReactDOM.render(
-  <Screen />,
+  <Calculator />,
   document.getElementById('root')
 );
