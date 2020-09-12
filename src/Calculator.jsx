@@ -77,7 +77,12 @@ function Calculator() {
                             break;
                     }
                 }
-            } else {}
+            } else {
+                setFirstNumber(displayNumber);
+                setSecondNumber("");
+                setIsFirst(false);
+                setOperator(nextEntry);
+            }
         }
         // // update first number until operator is entered setFirstNumber(firstNumber +
         // nextEntry); // get the operator setOperator(nextEntry); // update second
