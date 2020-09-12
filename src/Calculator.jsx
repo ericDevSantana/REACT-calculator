@@ -2,32 +2,67 @@ import React from "react";
 
 function Calculator() {
    const [currentNumber, setCurrentNumber] = React.useState("0");
+   const [lastNumber, setLastNumber] = React.useState("");
+   const [isFirst, setBool] = React.useState(true);
+   let operator = "";
 
    function setNumber(number){
        let aux = "";
 
-       if(number !== "AC"){
-           if(currentNumber === "0" && number.toString() === "0"){
-               aux = "0";
-           } else if(currentNumber === "0" && number.toString() !== "0"){
-               setCurrentNumber("");
-               aux = number.toString();
-           } else {
-               aux = currentNumber+number;
-           }
-           setCurrentNumber(aux);
+       if(isFirst){
+            if(number !== "AC"){
+                if(currentNumber === "0" && number.toString() === "0"){
+                    aux = "0";
+                } else if(currentNumber === "0" && number.toString() !== "0"){
+                    setCurrentNumber("");
+                    aux = number.toString();
+                } else {
+                    aux = currentNumber+number;
+                }
+                setCurrentNumber(aux);
+            } else {
+                setCurrentNumber("0");
+            }
        } else {
-           setCurrentNumber("0");
+            if(number !== "AC"){
+                if(lastNumber === "0" && number.toString() === "0"){
+                    aux = "0";
+                } else if(lastNumber === "0" && number.toString() !== "0"){
+                    setLastNumber("");
+                    aux = number.toString();
+                } else {
+                    aux = lastNumber+number;
+                }
+                setLastNumber(aux);
+            } else {
+                setLastNumber("0");
+            }
        }
 
+   }
+
+   function addNumber() {
+       setLastNumber(Number(currentNumber) + Number(lastNumber));
+   }
+
+   function subtractNumber() {
+       return Number(currentNumber) - Number(lastNumber);
+   }
+
+   function divideNumber() {
+       return Number(currentNumber) / Number(lastNumber);
+   }
+
+   function multiplyNumber() {
+       return Number(currentNumber) * Number(lastNumber);
    }
 
     return (
         <div className="parent">
             <div className="screen">
-                <h3>{currentNumber}</h3>
+                <h3>{isFirst ? currentNumber : lastNumber}</h3>
             </div>
-            <div id="operator" className="operator1" onClick={() => {console.log("+")}}>
+            <div id="operator" className="operator1" onClick={() => {setBool(false); operator = "+"; console.log(isFirst)}}>
                 <h3>+</h3>
             </div>
             <div id="operator" className="operator2">
@@ -39,7 +74,7 @@ function Calculator() {
             <div id="operator" className="operator4">
                 <h3>*</h3>
             </div>
-            <div id="equal" className="operator-equal">=</div>
+            <div id="equal" className="operator-equal" onClick={() => {addNumber()}}>=</div>
             <div id="numbers" className="digit7 digits" onClick={() => {setNumber(7)}}>7</div>
             <div id="numbers" className="digit8 digits" onClick={() => {setNumber(8)}}>8</div>
             <div id="numbers" className="digit9 digits" onClick={() => {setNumber(9)}}>9</div>

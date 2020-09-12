@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  padding: 10% 30%;
+  padding: 7% 37%;
 }
 
 #operator:hover {
@@ -36,6 +36,7 @@ body {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   text-align: center;
+  width: 400px;
 }
 
 .screen {
