@@ -31,7 +31,11 @@ function Calculator() {
                 setOperator("");
             } else if (nextEntry === "=") {
                 // Return firstNumber or 0 if empty !!!!!!!!!!!!!!!!!!!!!
-                setDisplay(firstNumber);
+                if (firstNumber === "") {
+                    setDisplay(displayNumber);
+                } else {
+                    setDisplay(firstNumber);
+                }
                 setFirstNumber("");
                 setSecondNumber("");
                 setOperator("");
@@ -75,7 +79,13 @@ function Calculator() {
                         case "*":
                             setDisplay(Number(firstNumber) * Number(secondNumber));
                             break;
+                        default:
+                            break;                            
                     }
+                    setFirstNumber("");
+                    setSecondNumber("");
+                    setOperator("");
+                    setIsFirst(true);
                 }
             } else {
                 setFirstNumber(displayNumber);
@@ -84,9 +94,6 @@ function Calculator() {
                 setOperator(nextEntry);
             }
         }
-        // // update first number until operator is entered setFirstNumber(firstNumber +
-        // nextEntry); // get the operator setOperator(nextEntry); // update second
-        // number until equal is entered setSecondNumber(secondNumber + nextEntry);
     }
 
     return (
