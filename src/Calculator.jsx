@@ -61,7 +61,7 @@ function Calculator() {
                     setDisplay(secondNumber + nextEntry);
                     setOneDot(true);
                 }
-                
+
             } else if (nextEntry === "AC") {
                 // Reset all variables
                 setFirstNumber("");
@@ -80,20 +80,23 @@ function Calculator() {
                     switch (operator) {
                         case "+":
                             setDisplay(Number(firstNumber) + Number(secondNumber));
+                            setFirstNumber(Number(firstNumber) + Number(secondNumber));
                             break;
                         case "-":
                             setDisplay(Number(firstNumber) - Number(secondNumber));
+                            setFirstNumber(Number(firstNumber) - Number(secondNumber));
                             break;
                         case "/":
                             setDisplay((Number(firstNumber) / Number(secondNumber)).toFixed(5));
+                            setFirstNumber((Number(firstNumber) / Number(secondNumber)).toFixed(5));
                             break;
                         case "*":
                             setDisplay(Number(firstNumber) * Number(secondNumber));
+                            setFirstNumber(Number(firstNumber) * Number(secondNumber));
                             break;
                         default:
                             break;
                     }
-                    setFirstNumber("");
                     setSecondNumber("");
                     setOperator("");
                     setIsFirst(true);
