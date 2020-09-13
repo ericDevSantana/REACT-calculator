@@ -85,7 +85,7 @@ function Calculator() {
                             setDisplay(Number(firstNumber) - Number(secondNumber));
                             break;
                         case "/":
-                            setDisplay(Number(firstNumber) / Number(secondNumber));
+                            setDisplay((Number(firstNumber) / Number(secondNumber)).toFixed(5));
                             break;
                         case "*":
                             setDisplay(Number(firstNumber) * Number(secondNumber));
