@@ -11,6 +11,8 @@ function Calculator() {
         setIsFirst] = React.useState(true);
     const [operator,
         setOperator] = React.useState("");
+    const [oneDot,
+        setOneDot] = React.useState(false);
 
     function nextChar(nextEntry) {
 
@@ -20,9 +22,12 @@ function Calculator() {
                 setDisplay(firstNumber + nextEntry);
             } else if (nextEntry === ".") {
                 // Add dot and prevent another dot to be added
-                setFirstNumber(firstNumber + nextEntry);
-                setDisplay(firstNumber + nextEntry);
-                // oneDotAdded = true
+                if (!oneDot) {
+                    setFirstNumber(firstNumber + nextEntry);
+                    setDisplay(firstNumber + nextEntry);
+                    setOneDot(true);
+                }
+
             } else if (nextEntry === "AC") {
                 // Reset all variables
                 setFirstNumber("");
@@ -43,6 +48,7 @@ function Calculator() {
                 setDisplay(firstNumber);
                 setOperator(nextEntry);
                 setIsFirst(false);
+                setOneDot(false);
             }
         } else {
             if (/\d/.test(nextEntry)) {
@@ -50,9 +56,12 @@ function Calculator() {
                 setDisplay(secondNumber + nextEntry);
             } else if (nextEntry === ".") {
                 // Add dot and prevent another dot to be added
-                setSecondNumber(secondNumber + nextEntry);
-                setDisplay(secondNumber + nextEntry);
-                // oneDotAdded = true
+                if (!oneDot) {
+                    setSecondNumber(secondNumber + nextEntry);
+                    setDisplay(secondNumber + nextEntry);
+                    setOneDot(true);
+                }
+                
             } else if (nextEntry === "AC") {
                 // Reset all variables
                 setFirstNumber("");
@@ -60,11 +69,13 @@ function Calculator() {
                 setDisplay("0");
                 setOperator("");
                 setIsFirst(true);
+                setOneDot(false);
             } else if (nextEntry === "=") {
 
                 if (secondNumber === "") {
                     setOperator("");
                     setIsFirst(true);
+                    setOneDot(false);
                 } else {
                     switch (operator) {
                         case "+":
@@ -80,12 +91,13 @@ function Calculator() {
                             setDisplay(Number(firstNumber) * Number(secondNumber));
                             break;
                         default:
-                            break;                            
+                            break;
                     }
                     setFirstNumber("");
                     setSecondNumber("");
                     setOperator("");
                     setIsFirst(true);
+                    setOneDot(false);
                 }
             } else {
                 setFirstNumber(displayNumber);
